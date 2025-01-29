@@ -1,0 +1,28 @@
+name: Update Problem Count
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Runs daily at midnight UTC
+  push:
+    branches:
+      - main
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Count solved problems
+        run: echo "PROBLEM_COUNT=$(find . -type f -name '*.cpp' | wc -l)" >> $GITHUB_ENV
+
+      - name: Update README.md
+        run: |
+          sed -i "s/Total Problems Solved: _Updating..._/Total Problems Solved: $PROBLEM_COUNT/" README.md
+          git config --global user.name "github-actions"
+          git config --global user.email "actions@github.com"
+          git add README.md
+          git commit -m "Updated problem count to $PROBLEM_COUNT" || exit 0
+          git push
