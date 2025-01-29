@@ -15,8 +15,7 @@ This repository is a personal archive of my problem-solving journey, helping me 
 - [SPOJ](https://www.spoj.com/)
 
 ## 📊 Total Problems Solved
-Total Problems Solved: Updating...
-
+Total Problems Solved: 20
 ## 🚀 How to Use
 1. Clone the repository:
    ```bash
