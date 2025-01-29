@@ -15,7 +15,7 @@ This repository is a personal archive of my problem-solving journey, helping me 
 - [SPOJ](https://www.spoj.com/)
 
 ## 📊 Total Problems Solved
-Count : 
+Total Problems Solved: Updating...
 
 ## 🚀 How to Use
 1. Clone the repository:
